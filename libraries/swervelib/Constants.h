@@ -16,7 +16,7 @@ constexpr int MOTOR_DRIVE_FR_PIN = 6;
 constexpr int TURN_FR_ENC_A_PIN = 2;
 constexpr int TURN_FR_ENC_B_PIN = 3;
 
-constexpr long ENCODER_COUNTS_PER_TURN = 1500;
+constexpr long ENCODER_COUNTS_PER_TURN = 1477;
 
 }; // namespace swervylib
 

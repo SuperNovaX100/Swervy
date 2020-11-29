@@ -1,7 +1,16 @@
+#define FRONT_MODULE true
+#if FRONT_MODULE
 #define USE_FRONT_LEFT true
 #define USE_FRONT_RIGHT true
 #define USE_BACK_LEFT false
 #define USE_BACK_RIGHT false
+#else
+#define USE_FRONT_LEFT false
+#define USE_FRONT_RIGHT false
+#define USE_BACK_LEFT true
+#define USE_BACK_RIGHT true
+#endif
+
 #include "InputHandler.h"
 #include "SwerveDrive.h"
 
@@ -15,6 +24,6 @@ void setup() {
 }
 
 void loop() {
-  swerve_drive.ReadEncoderCounts();
-  swerve_drive.HandleControlSignal(input_handler.GetControlSignal());
+  //swerve_drive.ReadEncoderCounts();
+  swerve_drive.HandleControlSignal1(input_handler.GetControlSignal());
 }
