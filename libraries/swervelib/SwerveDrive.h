@@ -29,7 +29,7 @@ public:
 
   void HandleControlSignal1(ControlSignal control_signal) {
     constexpr double kSquareDeadband = 0.10;
-    constexpr double kMaxWheelSpeed = 0.4;
+    constexpr double kMaxWheelSpeed = 1.0;
     constexpr double L = 1.0;
     constexpr double W = 1.0;
     const double R = sqrt(L*L + R*R);
@@ -41,7 +41,7 @@ public:
     str = ::swervylib::ApplyDeadband(str, kSquareDeadband);
     rcw = ::swervylib::ApplyDeadband(rcw, 0.05);
     fwd *= kMaxWheelSpeed;
-    strafe *= kMaxWheelSpeed;
+    str *= kMaxWheelSpeed;
 
     const double a = str - rcw * (L / R);
     const double b = str + rcw * (L / R);
